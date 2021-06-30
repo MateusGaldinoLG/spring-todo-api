@@ -11,6 +11,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -24,7 +26,7 @@ import lombok.NoArgsConstructor;
 public class Todos {
     
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
     @Column(nullable = false)
@@ -38,6 +40,7 @@ public class Todos {
 
     @ManyToOne(optional=false, cascade = CascadeType.PERSIST)
     @JoinColumn(name = "user_id", referencedColumnName = "ID")
+    @JsonIgnore
     private Users user;
 
 }

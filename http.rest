@@ -1,11 +1,26 @@
-GET http://localhost:8080/api/v1/todo HTTP/1.1
+GET http://localhost:8080/api/v1/todo/users HTTP/1.1
 
+###
 
-POST http://localhost:8080/api/v1/todo HTTP/1.1
+GET http://localhost:8080/api/v1/todo/1/todos HTTP/1.1
+
+###
+
+POST http://localhost:8080/api/v1/todo/sign-up HTTP/1.1
 Content-Type: application/json
 
 {
-    "firstName": "Mateus",
-    "lastName": "galdino",
-    "email": "teste@teste.com.br"
+    "firstName": "Tester",
+    "lastName": "teste",
+    "email": "mateus@teste.com.br"
+}
+
+###
+
+POST http://localhost:8080/api/v1/todo/2/add HTTP/1.1
+Content-Type: application/json
+
+{
+    "toDo": "Terminar as rotas da API",
+    "done": false
 }

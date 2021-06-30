@@ -1,0 +1,2 @@
+ALTER TABLE todos 
+RENAME COLUMN toDo TO to_do;
